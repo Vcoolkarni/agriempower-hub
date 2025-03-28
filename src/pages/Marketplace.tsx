@@ -1,66 +1,55 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Search, Filter, ArrowUpDown } from "lucide-react";
-
 const Marketplace = () => {
   // Placeholder data for equipment items
-  const equipmentItems = [
-    {
-      id: 1,
-      name: "John Deere Tractor",
-      price: "₹1,200,000",
-      condition: "Used - Good",
-      location: "Punjab",
-      image: "https://placehold.co/300x200/f5e6c3/907024?text=Tractor"
-    },
-    {
-      id: 2,
-      name: "Irrigation System",
-      price: "₹45,000",
-      condition: "New",
-      location: "Gujarat",
-      image: "https://placehold.co/300x200/f5e6c3/907024?text=Irrigation"
-    },
-    {
-      id: 3,
-      name: "Harvesting Machine",
-      price: "₹800,000",
-      condition: "Used - Excellent",
-      location: "Haryana",
-      image: "https://placehold.co/300x200/f5e6c3/907024?text=Harvester"
-    },
-    {
-      id: 4,
-      name: "Rotavator",
-      price: "₹120,000",
-      condition: "New",
-      location: "Uttar Pradesh",
-      image: "https://placehold.co/300x200/f5e6c3/907024?text=Rotavator"
-    },
-    {
-      id: 5,
-      name: "Spraying Equipment",
-      price: "₹25,000",
-      condition: "Used - Good",
-      location: "Maharashtra",
-      image: "https://placehold.co/300x200/f5e6c3/907024?text=Sprayer"
-    },
-    {
-      id: 6,
-      name: "Water Pump",
-      price: "₹18,000",
-      condition: "New",
-      location: "Tamil Nadu",
-      image: "https://placehold.co/300x200/f5e6c3/907024?text=Pump"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  const equipmentItems = [{
+    id: 1,
+    name: "John Deere Tractor",
+    price: "₹1,200,000",
+    condition: "Used - Good",
+    location: "Punjab",
+    image: "https://placehold.co/300x200/f5e6c3/907024?text=Tractor"
+  }, {
+    id: 2,
+    name: "Irrigation System",
+    price: "₹45,000",
+    condition: "New",
+    location: "Gujarat",
+    image: "https://placehold.co/300x200/f5e6c3/907024?text=Irrigation"
+  }, {
+    id: 3,
+    name: "Harvesting Machine",
+    price: "₹800,000",
+    condition: "Used - Excellent",
+    location: "Haryana",
+    image: "https://placehold.co/300x200/f5e6c3/907024?text=Harvester"
+  }, {
+    id: 4,
+    name: "Rotavator",
+    price: "₹120,000",
+    condition: "New",
+    location: "Uttar Pradesh",
+    image: "https://placehold.co/300x200/f5e6c3/907024?text=Rotavator"
+  }, {
+    id: 5,
+    name: "Spraying Equipment",
+    price: "₹25,000",
+    condition: "Used - Good",
+    location: "Maharashtra",
+    image: "https://placehold.co/300x200/f5e6c3/907024?text=Sprayer"
+  }, {
+    id: 6,
+    name: "Water Pump",
+    price: "₹18,000",
+    condition: "New",
+    location: "Tamil Nadu",
+    image: "https://placehold.co/300x200/f5e6c3/907024?text=Pump"
+  }];
+  return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
         <section className="bg-agri-dark text-white py-12">
@@ -77,10 +66,7 @@ const Marketplace = () => {
             <div className="flex flex-col md:flex-row gap-4 mb-6">
               <div className="relative flex-grow">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-agri-bark" />
-                <Input
-                  placeholder="Search for equipment..."
-                  className="pl-10 border-agri-gold/30 focus:border-agri-gold"
-                />
+                <Input placeholder="Search for equipment..." className="pl-10 border-agri-gold/30 focus:border-agri-gold" />
               </div>
               <Button variant="outline" className="border-agri-gold text-agri-gold">
                 <Filter className="mr-2 h-4 w-4" /> Filter
@@ -91,8 +77,7 @@ const Marketplace = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {equipmentItems.map((item) => (
-                <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              {equipmentItems.map(item => <Card key={item.id} className="">
                   <img src={item.image} alt={item.name} className="w-full h-48 object-cover" />
                   <CardContent className="p-4">
                     <h3 className="text-xl font-semibold text-agri-dark mb-2">{item.name}</h3>
@@ -103,15 +88,12 @@ const Marketplace = () => {
                       View Details
                     </Button>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Marketplace;
