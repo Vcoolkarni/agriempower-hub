@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom AgriEmpower colors
+				agri: {
+					cream: '#f5e6c3',
+					gold: '#c2a038',
+					brown: '#907024',
+					olive: '#9b911b',
+					yellow: '#e3db19',
+					pale: '#efd779',
+					moss: '#6f6a12',
+					bark: '#71551d',
+					bright: '#efd850',
+					sand: '#cdab79',
+					forest: '#5f4c15',
+					dark: '#342c11',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +100,33 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					}
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'fade-out': 'fade-out 0.5s ease-out',
 			}
 		}
 	},
